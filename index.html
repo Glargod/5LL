@@ -1,86 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dayton Audio PC83-4 Enclosure Projection</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
-    }
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-    }
-    svg {
-      background: white;
-      border: 1px solid #ccc;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-    text {
-      font-family: 'Arial', sans-serif;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Languages Quiz</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question p {
+            margin: 0 0 10px;
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin: 5px 0;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #chart-container {
+            display: none;
+            margin-top: 20px;
+        }
+        canvas {
+            max-width: 100%;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <svg width="700" height="720" viewBox="0 0 700 720" xmlns="http://www.w3.org/2000/svg">
+    <h1>Love Languages Quiz</h1>
+    <form id="quiz-form">
+        <!-- Sample Questions (2 per love language, expand to 10 per category) -->
+        <!-- Words of Affirmation -->
+        <div class="question" data-category="words">
+            <p>1. How much do you enjoy receiving heartfelt compliments from your partner?</p>
+            <label><input type="radio" name="q1" value="0" required>Not at all</label>
+            <label><input type="radio" name="q1" value="1">Slightly</label>
+            <label><input type="radio" name="q1" value="2">Moderately</label>
+            <label><input type="radio" name="q1" value="3">Quite a bit</label>
+            <label><input type="radio" name="q1" value="4">Absolutely love it</label>
+        </div>
+        <div class="question" data-category="words">
+            <p>2. If your partner’s words were a warm blanket on a cold night, how often would you want to be wrapped in them?</p>
+            <label><input type="radio" name="q2" value="0" required>Never</label>
+            <label><input type="radio" name="q2" value="1">Rarely</label>
+            <label><input type="radio" name="q2" value="2">Sometimes</label>
+            <label><input type="radio" name="q2" value="3">Often</label>
+            <label><input type="radio" name="q2" value="4">Always</label>
+        </div>
+        <!-- Acts of Service -->
+        <div class="question" data-category="service">
+            <p>3. When your partner does a small chore for you, like making coffee, how much does it brighten your day?</p>
+            <label><input type="radio" name="q3" value="0" required>Not at all</label>
+            <label><input type="radio" name="q3" value="1">A little</label>
+            <label><input type="radio" name="q3" value="2">Somewhat</label>
+            <label><input type="radio" name="q3" value="3">A lot</label>
+            <label><input type="radio" name="q3" value="4">Immensely</label>
+        </div>
+        <div class="question" data-category="service">
+            <p>4. If someone takes time to help you with a task without being asked, how valued do you feel?</p>
+            <label><input type="radio" name="q4" value="0" required>Not valued</label>
+            <label><input type="radio" name="q4" value="1">Slightly valued</label>
+            <label><input type="radio" name="q4" value="2">Moderately valued</label>
+            <label><input type="radio" name="q4" value="3">Very valued</label>
+            <label><input type="radio" name="q4" value="4">Deeply valued</label>
+        </div>
+        <!-- Receiving Gifts -->
+        <div class="question" data-category="gifts">
+            <p>5. How much do you appreciate receiving a thoughtful gift from your partner?</p>
+            <label><input type="radio" name="q5" value="0" required>Not at all</label>
+            <label><input type="radio" name="q5" value="1">Slightly</label>
+            <label><input type="radio" name="q5" value="2">Moderately</label>
+            <label><input type="radio" name="q5" value="3">Very much</label>
+            <label><input type="radio" name="q5" value="4">It means the world</label>
+        </div>
+        <div class="question" data-category="gifts">
+            <p>6. If a gift from your partner were a treasure chest, how excited would you be to open it?</p>
+            <label><input type="radio" name="q6" value="0" required>Not excited</label>
+            <label><input type="radio" name="q6" value="1">Mildly curious</label>
+            <label><input type="radio" name="q6" value="2">Somewhat excited</label>
+            <label><input type="radio" name="q6" value="3">Very excited</label>
+            <label><input type="radio" name="q6" value="4">Thrilled beyond measure</label>
+        </div>
+        <!-- Quality Time -->
+        <div class="question" data-category="time">
+            <p>7. How much do you enjoy long, uninterrupted conversations with your partner?</p>
+            <label><input type="radio" name="q7" value="0" required>Not at all</label>
+            <label><input type="radio" name="q7" value="1">A little</label>
+            <label><input type="radio" name="q7" value="2">Somewhat</label>
+            <label><input type="radio" name="q7" value="3">A lot</label>
+            <label><input type="radio" name="q7" value="4">It’s my favorite thing</label>
+        </div>
+        <div class="question" data-category="time">
+            <p>8. When you and your partner share a quiet evening together, how much does it recharge you?</p>
+            <label><input type="radio" name="q8" value="0" required>Not at all</label>
+            <label><input type="radio" name="q8" value="1">Slightly</label>
+            <label><input type="radio" name="q8" value="2">Moderately</label>
+            <label><input type="radio" name="q8" value="3">Significantly</label>
+            <label><input type="radio" name="q8" value="4">Completely</label>
+        </div>
+        <!-- Physical Touch -->
+        <div class="question" data-category="touch">
+            <p>9. How much do you value physical gestures like hugs or holding hands from your partner?</p>
+            <label><input type="radio" name="q9" value="0" required>Not at all</label>
+            <label><input type="radio" name="q9" value="1">Slightly</label>
+            <label><input type="radio" name="q9" value="2">Moderately</label>
+            <label><input type="radio" name="q9" value="3">Very much</label>
+            <label><input type="radio" name="q9" value="4">Essential to me</label>
+        </div>
+        <div class="question" data-category="touch">
+            <p>10. If your partner’s touch were a gentle breeze, how often would you want to feel it?</p>
+            <label><input type="radio" name="q10" value="0" required>Never</label>
+            <label><input type="radio" name="q10" value="1">Rarely</label>
+            <label><input type="radio" name="q10" value="2">Occasionally</label>
+            <label><input type="radio" name="q10" value="3">Often</label>
+            <label><input type="radio" name="q10" value="4">Constantly</label>
+        </div>
+        <!-- Add 40 more questions here to reach 50 (8 more per category) -->
+        <button type="submit">Submit Quiz</button>
+    </form>
+    <div id="chart-container">
+        <canvas id="loveLanguageChart"></canvas>
+    </div>
 
-      <!-- Title -->
-      <text x="350" y="30" font-size="18" text-anchor="middle" font-weight="bold">
-        Orthographic Projection – Cylindrical Bass-Reflex Enclosure
-      </text>
-      <text x="350" y="50" font-size="14" text-anchor="middle">Driver: Dayton Audio PC83-4</text>
+    <script>
+        const form = document.getElementById('quiz-form');
+        const chartContainer = document.getElementById('chart-container');
+        let chartInstance = null;
 
-      <!-- FRONT VIEW -->
-      <text x="125" y="90" font-size="14" text-anchor="middle" font-weight="bold">Front View</text>
-      <circle cx="125" cy="200" r="100" fill="none" stroke="#000" stroke-width="2"/>
-      <circle cx="125" cy="200" r="72" fill="none" stroke="#007bff" stroke-width="2"/>
-      <circle cx="125" cy="200" r="50" fill="none" stroke="#007bff" stroke-width="2" stroke-dasharray="5"/>
-      <text x="125" y="120" font-size="12" text-anchor="middle">PVC End Cap - Ø 5.563"</text>
-      <text x="125" y="140" font-size="12" text-anchor="middle">Speaker Ø 4.02" (Blue)</text>
-      <text x="125" y="160" font-size="12" text-anchor="middle">Cutout Ø 3" (Dashed)</text>
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const scores = {
+                words: 0,
+                service: 0,
+                gifts: 0,
+                time: 0,
+                touch: 0
+            };
 
-      <!-- TOP VIEW -->
-      <text x="350" y="90" font-size="14" text-anchor="middle" font-weight="bold">Top View</text>
-      <circle cx="350" cy="200" r="100" fill="none" stroke="#000" stroke-width="2"/>
-      <circle cx="350" cy="300" r="20" fill="none" stroke="red" stroke-width="2"/>
-      <circle cx="400" cy="213.4" r="20" fill="none" stroke="red" stroke-width="2"/>
-      <text x="350" y="120" font-size="12" text-anchor="middle">Cylinder Ø 5.563"</text>
-      <text x="350" y="335" font-size="12" text-anchor="middle">Port 1 – Ø 1"</text>
-      <text x="400" y="193.4" font-size="12" text-anchor="middle">Port 2 – Ø 1"</text>
-      <text x="385" y="270" font-size="12" text-anchor="middle">60° Port Separation</text>
-      <text x="385" y="290" font-size="12" text-anchor="middle">Also Functions as Feet</text>
+            // Calculate scores
+            document.querySelectorAll('.question').forEach((question, index) => {
+                const category = question.getAttribute('data-category');
+                const answer = formData.get(`q${index + 1}`);
+                scores[category] += parseInt(answer);
+            });
 
-      <!-- SIDE VIEW -->
-      <text x="575" y="90" font-size="14" text-anchor="middle" font-weight="bold">Side View</text>
-      <rect x="525" y="120" width="100" height="120" fill="none" stroke="#000" stroke-width="2"/>
-      <line x1="525" y1="120" x2="625" y2="120" stroke="#000" stroke-width="2"/>
-      <line x1="525" y1="240" x2="625" y2="240" stroke="#000" stroke-width="2"/>
-      <rect x="545" y="240" width="60" height="10" fill="none" stroke="red" stroke-width="2"/>
-      <rect x="560" y="250" width="30" height="10" fill="none" stroke="red" stroke-width="2"/>
-      <text x="575" y="110" font-size="12" text-anchor="middle">Internal Height: 6.1"</text>
-      <text x="575" y="280" font-size="12" text-anchor="middle">Total Height: 6.6"</text>
-      <text x="575" y="235" font-size="12" text-anchor="middle">End Cap Thickness: 0.25"</text>
-      <text x="575" y="270" font-size="12" text-anchor="middle">Ports – Ø 1", Length 2.4"</text>
+            // Normalize scores (max 40 per category, assuming 10 questions per category)
+            const normalizedScores = Object.values(scores).map(score => (score / 40) * 100);
 
-      <!-- BACK VIEW -->
-      <text x="350" y="380" font-size="14" text-anchor="middle" font-weight="bold">Back View</text>
-      <circle cx="350" cy="500" r="100" fill="none" stroke="#000" stroke-width="2"/>
-      <circle cx="350" cy="500" r="60" fill="none" stroke="green" stroke-width="2"/>
-      <text x="350" y="430" font-size="12" text-anchor="middle">Back PVC Cap – Ø 5.563"</text>
-      <text x="350" y="450" font-size="12" text-anchor="middle">Cleanout Adapter – Ø 3"</text>
+            // Destroy previous chart if it exists
+            if (chartInstance) {
+                chartInstance.destroy();
+            }
 
-      <!-- SPECIFICATION FOOTER -->
-      <text x="350" y="640" font-size="12" text-anchor="middle">Net Volume: 1.98L (0.0699 ft³)</text>
-      <text x="350" y="660" font-size="12" text-anchor="middle">Vas Match: 1.98L (0.07 ft³)</text>
-      <text x="350" y="680" font-size="12" text-anchor="middle">Material: Schedule 40 PVC</text>
-      <text x="350" y="700" font-size="12" text-anchor="middle">Tuning Frequency: 80 Hz</text>
-    </svg>
-  </div>
+            // Create radar chart
+            chartContainer.style.display = 'block';
+            const ctx = document.getElementById('loveLanguageChart').getContext('2d');
+            chartInstance = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['Words of Affirmation', 'Acts of Service', 'Receiving Gifts', 'Quality Time', 'Physical Touch'],
+                    datasets: [{
+                        label: 'Your Love Language Profile',
+                        data: normalizedScores,
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    scales: {
+                        r: {
+                            angleLines: { display: true },
+                            suggestedMin: 0,
+                            suggestedMax: 100,
+                            ticks: { stepSize: 20 }
+                        }
+                    }
+                }
+            });
+
+            // Scroll to chart
+            chartContainer.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
