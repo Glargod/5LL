@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Languages Quiz</title>
+    TEAM: Love Languages Quiz</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
@@ -57,8 +57,7 @@
 <body>
     <h1>Love Languages Quiz</h1>
     <form id="quiz-form">
-        <!-- Sample Questions (2 per love language, expand to 10 per category) -->
-        <!-- Words of Affirmation -->
+        <!-- Words of Affirmation (10 questions) -->
         <div class="question" data-category="words">
             <p>1. How much do you enjoy receiving heartfelt compliments from your partner?</p>
             <label><input type="radio" name="q1" value="0" required>Not at all</label>
@@ -75,75 +74,394 @@
             <label><input type="radio" name="q2" value="3">Often</label>
             <label><input type="radio" name="q2" value="4">Always</label>
         </div>
-        <!-- Acts of Service -->
-        <div class="question" data-category="service">
-            <p>3. When your partner does a small chore for you, like making coffee, how much does it brighten your day?</p>
+        <div class="question" data-category="words">
+            <p>3. How much does it mean when your partner writes you a heartfelt note?</p>
             <label><input type="radio" name="q3" value="0" required>Not at all</label>
-            <label><input type="radio" name="q3" value="1">A little</label>
+            <label><input type="radio" name="q3" value="1">Slightly</label>
             <label><input type="radio" name="q3" value="2">Somewhat</label>
             <label><input type="radio" name="q3" value="3">A lot</label>
-            <label><input type="radio" name="q3" value="4">Immensely</label>
+            <label><input type="radio" name="q3" value="4">Deeply meaningful</label>
+        </div>
+        <div class="question" data-category="words">
+            <p>4. When someone praises your efforts in front of others, how much does it uplift you?</p>
+            <label><input type="radio" name="q4" value="0" required>Not at all</label>
+            <label><input type="radio" name="q4" value="1">Slightly</label>
+            <label><input type="radio" name="q4" value="2">Moderately</label>
+            <label><input type="radio" name="q4" value="3">Quite a bit</label>
+            <label><input type="radio" name="q4" value="4">Greatly</label>
+        </div>
+        <div class="question" data-category="words">
+            <p>5. If kind words were rays of sunlight, how much would you bask in them?</p>
+            <label><input type="radio" name="q5" value="0" required>Never</label>
+            <label><input type="radio" name="q5" value="1">Rarely</label>
+            <label><input type="radio" name="q5" value="2">Sometimes</label>
+            <label><input type="radio" name="q5" value="3">Often</label>
+            <label><input type="radio" name="q5" value="4">Always</label>
+        </div>
+        <div class="question" data-category="words">
+            <p>6. How often do you feel loved when your partner verbally encourages you?</p>
+            <label><input type="radio" name="q6" value="0" required>Never</label>
+            <label><input type="radio" name="q6" value="1">Rarely</label>
+            <label><input type="radio" name="q6" value="2">Sometimes</label>
+            <label><input type="radio" name="q6" value="3">Often</label>
+            <label><input type="radio" name="q6" value="4">Always</label>
+        </div>
+        <div class="question" data-category="words">
+            <p>7. How much do you appreciate when your partner says they’re proud of you?</p>
+            <label><input type="radio" name="q7" value="0" required>Not at all</label>
+            <label><input type="radio" name="q7" value="1">Slightly</label>
+            <label><input type="radio" name="q7" value="2">Moderately</label>
+            <label><input type="radio" name="q7" value="3">Very much</label>
+            <label><input type="radio" name="q7" value="4">It means everything</label>
+        </div>
+        <div class="question" data-category="words">
+            <p>8. If your partner’s compliments were a song, how often would you play it?</p>
+            <label><input type="radio" name="q8" value="0" required>Never</label>
+            <label><input type="radio" name="q8" value="1">Rarely</label>
+            <label><input type="radio" name="q8" value="2">Sometimes</label>
+            <label><input type="radio" name="q8" value="3">Often</label>
+            <label><input type="radio" name="q8" value="4">All the time</label>
+        </div>
+        <div class="question" data-category="words">
+            <p>9. How much does it warm your heart when your partner expresses gratitude for you?</p>
+            <label><input type="radio" name="q9" value="0" required>Not at all</label>
+            <label><input type="radio" name="q9" value="1">A little</label>
+            <label><input type="radio" name="q9" value="2">Somewhat</label>
+            <label><input type="radio" name="q9" value="3">A lot</label>
+            <label><input type="radio" name="q9" value="4">Immensely</label>
+        </div>
+        <div class="question" data-category="words">
+            <p>10. When your partner says “I love you” sincerely, how much does it impact you?</p>
+            <label><input type="radio" name="q10" value="0" required>Not at all</label>
+            <label><input type="radio" name="q10" value="1">Slightly</label>
+            <label><input type="radio" name="q10" value="2">Moderately</label>
+            <label><input type="radio" name="q10" value="3">Very much</label>
+            <label><input type="radio" name="q10" value="4">Deeply</label>
+        </div>
+        <!-- Acts of Service (10 questions) -->
+        <div class="question" data-category="service">
+            <p>11. When your partner does a small chore for you, like making coffee, how much does it brighten your day?</p>
+            <label><input type="radio" name="q11" value="0" required>Not at all</label>
+            <label><input type="radio" name="q11" value="1">A little</label>
+            <label><input type="radio" name="q11" value="2">Somewhat</label>
+            <label><input type="radio" name="q11" value="3">A lot</label>
+            <label><input type="radio" name="q11" value="4">Immensely</label>
         </div>
         <div class="question" data-category="service">
-            <p>4. If someone takes time to help you with a task without being asked, how valued do you feel?</p>
-            <label><input type="radio" name="q4" value="0" required>Not valued</label>
-            <label><input type="radio" name="q4" value="1">Slightly valued</label>
-            <label><input type="radio" name="q4" value="2">Moderately valued</label>
-            <label><input type="radio" name="q4" value="3">Very valued</label>
-            <label><input type="radio" name="q4" value="4">Deeply valued</label>
+            <p>12. If someone takes time to help you with a task without being asked, how valued do you feel?</p>
+            <label><input type="radio" name="q12" value="0" required>Not valued</label>
+            <label><input type="radio" name="q12" value="1">Slightly valued</label>
+            <label><input type="radio" name="q12" value="2">Moderately valued</label>
+            <label><input type="radio" name="q12" value="3">Very valued</label>
+            <label><input type="radio" name="q12" value="4">Deeply valued</label>
         </div>
-        <!-- Receiving Gifts -->
+        <div class="question" data-category="service">
+            <p>13. Does it warm your heart when your partner handles a task you dislike?</p>
+            <label><input type="radio" name="q13" value="0" required>Not at all</label>
+            <label><input type="radio" name="q13" value="1">A little</label>
+            <label><input type="radio" name="q13" value="2">Somewhat</label>
+            <label><input type="radio" name="q13" value="3">A lot</label>
+            <label><input type="radio" name="q13" value="4">Very much</label>
+        </div>
+        <div class="question" data-category="service">
+            <p>14. How much do you appreciate someone running an errand for you?</p>
+            <label><input type="radio" name="q14" value="0" required>Not at all</label>
+            <label><input type="radio" name="q14" value="1">Slightly</label>
+            <label><input type="radio" name="q14" value="2">Moderately</label>
+            <label><input type="radio" name="q14" value="3">Very much</label>
+            <label><input type="radio" name="q14" value="4">Greatly</label>
+        </div>
+        <div class="question" data-category="service">
+            <p>15. If your partner’s help were a bridge over a river, how often would you cross it?</p>
+            <label><input type="radio" name="q15" value="0" required>Never</label>
+            <label><input type="radio" name="q15" value="1">Rarely</label>
+            <label><input type="radio" name="q15" value="2">Sometimes</label>
+            <label><input type="radio" name="q15" value="3">Often</label>
+            <label><input type="radio" name="q15" value="4">Always</label>
+        </div>
+        <div class="question" data-category="service">
+            <p>16. How much do you value your partner cooking dinner for you?</p>
+            <label><input type="radio" name="q16" value="0" required>Not at all</label>
+            <label><input type="radio" name="q16" value="1">Slightly</label>
+            <label><input type="radio" name="q16" value="2">Moderately</label>
+            <label><input type="radio" name="q16" value="3">Very much</label>
+            <label><input type="radio" name="q16" value="4">Essential</label>
+        </div>
+        <div class="question" data-category="service">
+            <p>17. When your partner organizes something for you, like a schedule, how much does it help?</p>
+            <label><input type="radio" name="q17" value="0" required>Not at all</label>
+            <label><input type="radio" name="q17" value="1">A little</label>
+            <label><input type="radio" name="q17" value="2">Somewhat</label>
+            <label><input type="radio" name="q17" value="3">A lot</label>
+            <label><input type="radio" name="q17" value="4">Immensely</label>
+        </div>
+        <div class="question" data-category="service">
+            <p>18. If your partner’s help were a lantern in the dark, how bright would it shine?</p>
+            <label><input type="radio" name="q18" value="0" required>Not at all</label>
+            <label><input type="radio" name="q18" value="1">Dimly</label>
+            <label><input type="radio" name="q18" value="2">Moderately</label>
+            <label><input type="radio" name="q18" value="3">Brightly</label>
+            <label><input type="radio" name="q18" value="4">Dazzlingly</label>
+        </div>
+        <div class="question" data-category="service">
+            <p>19. How much does it mean when your partner takes care of something you forgot?</p>
+            <label><input type="radio" name="q19" value="0" required>Not at all</label>
+            <label><input type="radio" name="q19" value="1">Slightly</label>
+            <label><input type="radio" name="q19" value="2">Moderately</label>
+            <label><input type="radio" name="q19" value="3">Very much</label>
+            <label><input type="radio" name="q19" value="4">Deeply</label>
+        </div>
+        <div class="question" data-category="service">
+            <p>20. When your partner helps you with a project, how much does it strengthen your bond?</p>
+            <label><input type="radio" name="q20" value="0" required>Not at all</label>
+            <label><input type="radio" name="q20" value="1">Slightly</label>
+            <label><input type="radio" name="q20" value="2">Moderately</label>
+            <label><input type="radio" name="q20" value="3">Very much</label>
+            <label><input type="radio" name="q20" value="4">Immensely</label>
+        </div>
+        <!-- Receiving Gifts (10 questions) -->
         <div class="question" data-category="gifts">
-            <p>5. How much do you appreciate receiving a thoughtful gift from your partner?</p>
-            <label><input type="radio" name="q5" value="0" required>Not at all</label>
-            <label><input type="radio" name="q5" value="1">Slightly</label>
-            <label><input type="radio" name="q5" value="2">Moderately</label>
-            <label><input type="radio" name="q5" value="3">Very much</label>
-            <label><input type="radio" name="q5" value="4">It means the world</label>
+            <p>21. How much do you appreciate receiving a thoughtful gift from your partner?</p>
+            <label><input type="radio" name="q21" value="0" required>Not at all</label>
+            <label><input type="radio" name="q21" value="1">Slightly</label>
+            <label><input type="radio" name="q21" value="2">Moderately</label>
+            <label><input type="radio" name="q21" value="3">Very much</label>
+            <label><input type="radio" name="q21" value="4">It means the world</label>
         </div>
         <div class="question" data-category="gifts">
-            <p>6. If a gift from your partner were a treasure chest, how excited would you be to open it?</p>
-            <label><input type="radio" name="q6" value="0" required>Not excited</label>
-            <label><input type="radio" name="q6" value="1">Mildly curious</label>
-            <label><input type="radio" name="q6" value="2">Somewhat excited</label>
-            <label><input type="radio" name="q6" value="3">Very excited</label>
-            <label><input type="radio" name="q6" value="4">Thrilled beyond measure</label>
+            <p>22. If a gift from your partner were a treasure chest, how excited would you be to open it?</p>
+            <label><input type="radio" name="q22" value="0" required>Not excited</label>
+            <label><input type="radio" name="q22" value="1">Mildly curious</label>
+            <label><input type="radio" name="q22" value="2">Somewhat excited</label>
+            <label><input type="radio" name="q22" value="3">Very excited</label>
+            <label><input type="radio" name="q22" value="4">Thrilled beyond measure</label>
         </div>
-        <!-- Quality Time -->
+        <div class="question" data-category="gifts">
+            <p>23. How much does a small, unexpected gift from your partner lift your spirits?</p>
+            <label><input type="radio" name="q23" value="0" required>Not at all</label>
+            <label><input type="radio" name="q23" value="1">A little</label>
+            <label><input type="radio" name="q23" value="2">Somewhat</label>
+            <label><input type="radio" name="q23" value="3">A lot</label>
+            <label><input type="radio" name="q23" value="4">Immensely</label>
+        </div>
+        <div class="question" data-category="gifts">
+            <p>24. When someone gives you something that reminds them of you, how special does it feel?</p>
+            <label><input type="radio" name="q24" value="0" required>Not special</label>
+            <label><input type="radio" name="q24" value="1">Slightly special</label>
+            <label><input type="radio" name="q24" value="2">Moderately special</label>
+            <label><input type="radio" name="q24" value="3">Very special</label>
+            <label><input type="radio" name="q24" value="4">Extremely special</label>
+        </div>
+        <div class="question" data-category="gifts">
+            <p>25. If gifts were stars in the sky, how bright would your night be?</p>
+            <label><input type="radio" name="q25" value="0" required>Dark</label>
+            <label><input type="radio" name="q25" value="1">Dim</label>
+            <label><input type="radio" name="q25" value="2">Moderately bright</label>
+            <label><input type="radio" name="q25" value="3">Very bright</label>
+            <label><input type="radio" name="q25" value="4">Dazzling</label>
+        </div>
+        <div class="question" data-category="gifts">
+            <p>26. How much do you cherish a gift chosen with care?</p>
+            <label><input type="radio" name="q26" value="0" required>Not at all</label>
+            <label><input type="radio" name="q26" value="1">Slightly</label>
+            <label><input type="radio" name="q26" value="2">Moderately</label>
+            <label><input type="radio" name="q26" value="3">Very much</label>
+            <label><input type="radio" name="q26" value="4">Deeply</label>
+        </div>
+        <div class="question" data-category="gifts">
+            <p>27. How much does a handmade gift from your partner mean to you?</p>
+            <label><input type="radio" name="q27" value="0" required>Not at all</label>
+            <label><input type="radio" name="q27" value="1">A little</label>
+            <label><input type="radio" name="q27" value="2">Somewhat</label>
+            <label><input type="radio" name="q27" value="3">A lot</label>
+            <label><input type="radio" name="q27" value="4">Immensely</label>
+        </div>
+        <div class="question" data-category="gifts">
+            <p>28. If a gift were a spark, how much would it ignite your joy?</p>
+            <label><input type="radio" name="q28" value="0" required>Not at all</label>
+            <label><input type="radio" name="q28" value="1">A flicker</label>
+            <label><input type="radio" name="q28" value="2">A small flame</label>
+            <label><input type="radio" name="q28" value="3">A strong flame</label>
+            <label><input type="radio" name="q28" value="4">A blazing fire</label>
+        </div>
+        <div class="question" data-category="gifts">
+            <p>29. How much do you value a gift that reflects your interests?</p>
+            <label><input type="radio" name="q29" value="0" required>Not at all</label>
+            <label><input type="radio" name="q29" value="1">Slightly</label>
+            <label><input type="radio" name="q29" value="2">Moderately</label>
+            <label><input type="radio" name="q29" value="3">Very much</label>
+            <label><input type="radio" name="q29" value="4">Immensely</label>
+        </div>
+        <div class="question" data-category="gifts">
+            <p>30. When your partner surprises you with something small, how much does it touch you?</p>
+            <label><input type="radio" name="q30" value="0" required>Not at all</label>
+            <label><input type="radio" name="q30" value="1">Slightly</label>
+            <label><input type="radio" name="q30" value="2">Moderately</label>
+            <label><input type="radio" name="q30" value="3">Very much</label>
+            <label><input type="radio" name="q30" value="4">Deeply</label>
+        </div>
+        <!-- Quality Time (10 questions) -->
         <div class="question" data-category="time">
-            <p>7. How much do you enjoy long, uninterrupted conversations with your partner?</p>
-            <label><input type="radio" name="q7" value="0" required>Not at all</label>
-            <label><input type="radio" name="q7" value="1">A little</label>
-            <label><input type="radio" name="q7" value="2">Somewhat</label>
-            <label><input type="radio" name="q7" value="3">A lot</label>
-            <label><input type="radio" name="q7" value="4">It’s my favorite thing</label>
+            <p>31. How much do you enjoy long, uninterrupted conversations with your partner?</p>
+            <label><input type="radio" name="q31" value="0" required>Not at all</label>
+            <label><input type="radio" name="q31" value="1">A little</label>
+            <label><input type="radio" name="q31" value="2">Somewhat</label>
+            <label><input type="radio" name="q31" value="3">A lot</label>
+            <label><input type="radio" name="q31" value="4">It’s my favorite thing</label>
         </div>
         <div class="question" data-category="time">
-            <p>8. When you and your partner share a quiet evening together, how much does it recharge you?</p>
-            <label><input type="radio" name="q8" value="0" required>Not at all</label>
-            <label><input type="radio" name="q8" value="1">Slightly</label>
-            <label><input type="radio" name="q8" value="2">Moderately</label>
-            <label><input type="radio" name="q8" value="3">Significantly</label>
-            <label><input type="radio" name="q8" value="4">Completely</label>
+            <p>32. When you and your partner share a quiet evening together, how much does it recharge you?</p>
+            <label><input type="radio" name="q32" value="0" required>Not at all</label>
+            <label><input type="radio" name="q32" value="1">Slightly</label>
+            <label><input type="radio" name="q32" value="2">Moderately</label>
+            <label><input type="radio" name="q32" value="3">Significantly</label>
+            <label><input type="radio" name="q32" value="4">Completely</label>
         </div>
-        <!-- Physical Touch -->
+        <div class="question" data-category="time">
+            <p>33. How much do you enjoy a walk with your partner with no distractions?</p>
+            <label><input type="radio" name="q33" value="0" required>Not at all</label>
+            <label><input type="radio" name="q33" value="1">A little</label>
+            <label><input type="radio" name="q33" value="2">Somewhat</label>
+            <label><input type="radio" name="q33" value="3">A lot</label>
+            <label><input type="radio" name="q33" value="4">Love it</label>
+        </div>
+        <div class="question" data-category="time">
+            <p>34. Does spending an afternoon together without plans feel fulfilling?</p>
+            <label><input type="radio" name="q34" value="0" required>Not at all</label>
+            <label><input type="radio" name="q34" value="1">Slightly</label>
+            <label><input type="radio" name="q34" value="2">Moderately</label>
+            <label><input type="radio" name="q34" value="3">Very much</label>
+            <label><input type="radio" name="q34" value="4">Extremely</label>
+        </div>
+        <div class="question" data-category="time">
+            <p>35. If time with your partner were a garden, how often would you wander in it?</p>
+            <label><input type="radio" name="q35" value="0" required>Never</label>
+            <label><input type="radio" name="q35" value="1">Rarely</label>
+            <label><input type="radio" name="q35" value="2">Sometimes</label>
+            <label><input type="radio" name="q35" value="3">Often</label>
+            <label><input type="radio" name="q35" value="4">Always</label>
+        </div>
+        <div class="question" data-category="time">
+            <p>36. How important is it to have your partner’s undivided attention?</p>
+            <label><input type="radio" name="q36" value="0" required>Not important</label>
+            <label><input type="radio" name="q36" value="1">Slightly important</label>
+            <label><input type="radio" name="q36" value="2">Moderately important</label>
+            <label><input type="radio" name="q36" value="3">Very important</label>
+            <label><input type="radio" name="q36" value="4">Essential</label>
+        </div>
+        <div class="question" data-category="time">
+            <p>37. How much do you value doing a shared activity, like cooking together?</p>
+            <label><input type="radio" name="q37" value="0" required>Not at all</label>
+            <label><input type="radio" name="q37" value="1">Slightly</label>
+            <label><input type="radio" name="q37" value="2">Moderately</label>
+            <label><input type="radio" name="q37" value="3">Very much</label>
+            <label><input type="radio" name="q37" value="4">Immensely</label>
+        </div>
+        <div class="question" data-category="time">
+            <p>38. If shared moments were a book, how often would you read it?</p>
+            <label><input type="radio" name="q38" value="0" required>Never</label>
+            <label><input type="radio" name="q38" value="1">Rarely</label>
+            <label><input type="radio" name="q38" value="2">Sometimes</label>
+            <label><input type="radio" name="q38" value="3">Often</label>
+            <label><input type="radio" name="q38" value="4">Always</label>
+        </div>
+        <div class="question" data-category="time">
+            <p>39. How much does it mean to plan a special day with your partner?</p>
+            <label><input type="radio" name="q39" value="0" required>Not at all</label>
+            <label><input type="radio" name="q39" value="1">Slightly</label>
+            <label><input type="radio" name="q39" value="2">Moderately</label>
+            <label><input type="radio" name="q39" value="3">Very much</label>
+            <label><input type="radio" name="q39" value="4">Deeply</label>
+        </div>
+        <div class="question" data-category="time">
+            <p>40. When you and your partner share a hobby, how connected do you feel?</p>
+            <label><input type="radio" name="q40" value="0" required>Not at all</label>
+            <label><input type="radio" name="q40" value="1">Slightly</label>
+            <label><input type="radio" name="q40" value="2">Moderately</label>
+            <label><input type="radio" name="q40" value="3">Very much</label>
+            <label><input type="radio" name="q40" value="4">Deeply</label>
+        </div>
+        <!-- Physical Touch (10 questions) -->
         <div class="question" data-category="touch">
-            <p>9. How much do you value physical gestures like hugs or holding hands from your partner?</p>
-            <label><input type="radio" name="q9" value="0" required>Not at all</label>
-            <label><input type="radio" name="q9" value="1">Slightly</label>
-            <label><input type="radio" name="q9" value="2">Moderately</label>
-            <label><input type="radio" name="q9" value="3">Very much</label>
-            <label><input type="radio" name="q9" value="4">Essential to me</label>
+            <p>41. How much do you value physical gestures like hugs or holding hands from your partner?</p>
+            <label><input type="radio" name="q41" value="0" required>Not at all</label>
+            <label><input type="radio" name="q41" value="1">Slightly</label>
+            <label><input type="radio" name="q41" value="2">Moderately</label>
+            <label><input type="radio" name="q41" value="3">Very much</label>
+            <label><input type="radio" name="q41" value="4">Essential to me</label>
         </div>
         <div class="question" data-category="touch">
-            <p>10. If your partner’s touch were a gentle breeze, how often would you want to feel it?</p>
-            <label><input type="radio" name="q10" value="0" required>Never</label>
-            <label><input type="radio" name="q10" value="1">Rarely</label>
-            <label><input type="radio" name="q10" value="2">Occasionally</label>
-            <label><input type="radio" name="q10" value="3">Often</label>
-            <label><input type="radio" name="q10" value="4">Constantly</label>
+            <p>42. If your partner’s touch were a gentle breeze, how often would you want to feel it?</p>
+            <label><input type="radio" name="q42" value="0" required>Never</label>
+            <label><input type="radio" name="q42" value="1">Rarely</label>
+            <label><input type="radio" name="q42" value="2">Occasionally</label>
+            <label><input type="radio" name="q42" value="3">Often</label>
+            <label><input type="radio" name="q42" value="4">Constantly</label>
         </div>
-        <!-- Add 40 more questions here to reach 50 (8 more per category) -->
+        <div class="question" data-category="touch">
+            <p>43. How much does a gentle touch on your shoulder comfort you?</p>
+            <label><input type="radio" name="q43" value="0" required>Not at all</label>
+            <label><input type="radio" name="q43" value="1">Slightly</label>
+            <label><input type="radio" name="q43" value="2">Moderately</label>
+            <label><input type="radio" name="q43" value="3">Very much</label>
+            <label><input type="radio" name="q43" value="4">Greatly</label>
+        </div>
+        <div class="question" data-category="touch">
+            <p>44. When your partner holds your hand during a tough moment, how supported do you feel?</p>
+            <label><input type="radio" name="q44" value="0" required>Not supported</label>
+            <label><input type="radio" name="q44" value="1">Slightly supported</label>
+            <label><input type="radio" name="q44" value="2">Moderately supported</label>
+            <label><input type="radio" name="q44" value="3">Very supported</label>
+            <label><input type="radio" name="q44" value="4">Fully supported</label>
+        </div>
+        <div class="question" data-category="touch">
+            <p>45. If your partner’s touch were a warm hearth, how often would you sit by it?</p>
+            <label><input type="radio" name="q45" value="0" required>Never</label>
+            <label><input type="radio" name="q45" value="1">Rarely</label>
+            <label><input type="radio" name="q45" value="2">Sometimes</label>
+            <label><input type="radio" name="q45" value="3">Often</label>
+            <label><input type="radio" name="q45" value="4">Always</label>
+        </div>
+        <div class="question" data-category="touch">
+            <p>46. How much do you crave physical closeness with your partner?</p>
+            <label><input type="radio" name="q46" value="0" required>Not at all</label>
+            <label><input type="radio" name="q46" value="1">Slightly</label>
+            <label><input type="radio" name="q46" value="2">Moderately</label>
+            <label><input type="radio" name="q46" value="3">Very much</label>
+            <label><input type="radio" name="q46" value="4">Constantly</label>
+        </div>
+        <div class="question" data-category="touch">
+            <p>47. How much does a hug from your partner lift your mood?</p>
+            <label><input type="radio" name="q47" value="0" required>Not at all</label>
+            <label><input type="radio" name="q47" value="1">Slightly</label>
+            <label><input type="radio" name="q47" value="2">Moderately</label>
+            <label><input type="radio" name="q47" value="3">Very much</label>
+            <label><input type="radio" name="q47" value="4">Immensely</label>
+        </div>
+        <div class="question" data-category="touch">
+            <p>48. If your partner’s touch were a melody, how often would you want to hear it?</p>
+            <label><input type="radio" name="q48" value="0" required>Never</label>
+            <label><input type="radio" name="q48" value="1">Rarely</label>
+            <label><input type="radio" name="q48" value="2">Sometimes</label>
+            <label><input type="radio" name="q48" value="3">Often</label>
+            <label><input type="radio" name="q48" value="4">Always</label>
+        </div>
+        <div class="question" data-category="touch">
+            <p>49. How much does sitting close to your partner make you feel connected?</p>
+            <label><input type="radio" name="q49" value="0" required>Not at all</label>
+            <label><input type="radio" name="q49" value="1">Slightly</label>
+            <label><input type="radio" name="q49" value="2">Moderately</label>
+            <label><input type="radio" name="q49" value="3">Very much</label>
+            <label><input type="radio" name="q49" value="4">Deeply</label>
+        </div>
+        <div class="question" data-category="touch">
+            <p>50. When your partner touches you gently, how much does it reassure you?</p>
+            <label><input type="radio" name="q50" value="0" required>Not at all</label>
+            <label><input type="radio" name="q50" value="1">Slightly</label>
+            <label><input type="radio" name="q50" value="2">Moderately</label>
+            <label><input type="radio" name="q50" value="3">Very much</label>
+            <label><input type="radio" name="q50" value="4">Immensely</label>
+        </div>
         <button type="submit">Submit Quiz</button>
     </form>
     <div id="chart-container">
@@ -173,7 +491,7 @@
                 scores[category] += parseInt(answer);
             });
 
-            // Normalize scores (max 40 per category, assuming 10 questions per category)
+            // Normalize scores (max 40 per category)
             const normalizedScores = Object.values(scores).map(score => (score / 40) * 100);
 
             // Destroy previous chart if it exists
@@ -213,4 +531,4 @@
         });
     </script>
 </body>
-</html>
+            </html>
